@@ -1,0 +1,25 @@
+import Fastify, { FastifyInstance } from "fastify";
+import cors from "@fastify/cors";
+
+const fastify: FastifyInstance = Fastify({
+logger: false,
+});
+fastify.register(cors, {
+origin: "*",
+credentials: true,
+maxAge: 86400, // 24 horas
+methods: ["GET", "POST", "DELETE", "PUT"],
+allowedHeaders: ["Content-Type", "Authorization"]
+})
+
+fastify.register(import("./app/routers/index"));
+
+const { PORT = 5173, HOST: host } = process.env;
+
+fastify.listen({ port: +PORT, host }, function (err, address) {
+if (err) {
+fastify.log.error(err)
+process.exit(1)
+}
+console.log(`Server is now listening on ${address}`);
+});
