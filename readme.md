@@ -14,7 +14,7 @@
 
 
 
-# Package EC-Builder 3.0.1
+# Package EC-Builder 3.1.1
 
 EC-Builder é uma ferramenta de linha de comando (CLI) para criar projetos padronizados de front-end para empresas, configurando ESLint, Prettier e a estrutura de pastas para projetos em React.js e Node.js. Esta ferramenta ajuda a garantir a consistência e qualidade dos projetos ao seguir padrões pré-definidos.
 
